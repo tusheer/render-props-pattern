@@ -5,10 +5,10 @@ interface IMenu {
 	children: ({ toggle, open }: IDropdownContext) => ReactElement;
 }
 
-const Menu: React.FC<IMenu> = (props) => {
+const Menu: React.FC<IMenu> = ({children}) => {
 	const { open, toggle }: IDropdownContext = useDropdownContext();
 
-	return props.children({ toggle, open });
+	return children({ toggle, open });
 };
 
 Menu.displayName = "Menu"
